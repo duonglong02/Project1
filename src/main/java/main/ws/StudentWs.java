@@ -1,6 +1,5 @@
 package main.ws;
 
-import main.obj.Student;
 import main.utils.CallWs;
 
 import javax.jws.WebMethod;
@@ -30,13 +29,6 @@ public class StudentWs {
                 CallWs.callStudentWs(username, password, name, age, code, className, address, mark);
                 return "Thành công";
             }
-//            int ageFake = Integer.parseInt(age);
-//            float markFake = Float.parseFloat(mark);
-//            if (CheckPassword.check(username,password)) {
-//                CallWs.callStudentWs(username, password, name, age, code, className, address, mark);
-//                return "Thành công";
-//            }
-//            return "Username và password không hợp lệ.";
         }catch (Exception e){
             return "Thất bại";
         }
@@ -45,8 +37,8 @@ public class StudentWs {
     public static class CheckPassword {
         public static Boolean check(String username, String password){
             try{
-                String usernameAdmin = Files.readAllLines(Paths.get("C:/Users/HP/IdeaProjects/OceanTech/ChuaBT/Pj1/lib/app.conf")).get(0);
-                String passwordAdmin = Files.readAllLines(Paths.get("C:/Users/HP/IdeaProjects/OceanTech/ChuaBT/Pj1/lib/app.conf")).get(1);
+                String usernameAdmin = Files.readAllLines(Paths.get("C:/Users/HP/IdeaProjects/OceanTech/ChuaBT/Poject1/lib/app.conf")).get(0);
+                String passwordAdmin = Files.readAllLines(Paths.get("C:/Users/HP/IdeaProjects/OceanTech/ChuaBT/Poject1/lib/app.conf")).get(1);
 
                 if(username.equals(usernameAdmin) && password.equals(passwordAdmin)){
                     return true;
