@@ -1,7 +1,5 @@
 package main.ws;
 
-import main.obj.Student;
-import main.thread.ThreadOne;
 import main.utils.CallWs;
 
 import javax.jws.WebMethod;
@@ -19,21 +17,20 @@ public class StudentWs {
                                  @WebParam(name = "code") String code, @WebParam(name = "className") String className,
                                  @WebParam(name = "address") String address, @WebParam(name = "mark") String mark) {
         try {
-            int ageFake = Integer.parseInt(age);
-            float markFake = Float.parseFloat(mark);
-            if (CheckPasswordUser.check(username,password)) {
-
-                CallWs.callStudentWs(username,password,name,age,code,className,address,mark);
-
-                return "Thành công";
+            if (!CheckPassword.check(username,password)){
+                return "Username và password không hợp lệ";
             }
-            return "Username và password không hợp lệ.";
+            if (name.length() == 0 || code.length() == 0 || address.length() == 0 || className.length() == 0){
+                return "Thất bại: Điền thiếu thông tin sinh viên.";
+            }
+            CallWs.callStudentWs(username,password,name,age,code,className,address,mark);
+            return "Thành công";
         }catch (Exception e){
             return "Thất bại";
         }
     }
 
-    public static class CheckPasswordUser {
+    public static class CheckPassword {
         public static Boolean check(String username, String password){
             try{
                 String usernameAdmin = Files.readAllLines(Paths.get("C:/Users/HP/IdeaProjects/OceanTech/ChuaBT/Pj1/lib/app.conf")).get(0);
