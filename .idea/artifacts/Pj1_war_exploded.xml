@@ -1,17 +1,17 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="Poject1:war exploded">
-    <output-path>$PROJECT_DIR$/target/Poject1-1.0-SNAPSHOT</output-path>
+  <artifact type="exploded-war" name="Pj1:war exploded">
+    <output-path>$PROJECT_DIR$/../Pj1/target/Pj1-1.0-SNAPSHOT</output-path>
     <properties id="maven-jee-properties">
       <options>
         <exploded>true</exploded>
-        <module>Poject1</module>
+        <module>Pj1</module>
         <packaging>war</packaging>
       </options>
     </properties>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="Poject1" />
+          <element id="module-output" name="Pj1" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
@@ -20,9 +20,9 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/Poject1-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/../Pj1/target/Pj1-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="Poject1/web/Web" />
+      <element id="javaee-facet-resources" facet="Pj1/web/Web" />
     </root>
   </artifact>
 </component>
