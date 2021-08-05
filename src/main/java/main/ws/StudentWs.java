@@ -1,5 +1,6 @@
 package main.ws;
 
+import main.obj.Student;
 import main.utils.CallWs;
 
 import javax.jws.WebMethod;
@@ -20,11 +21,22 @@ public class StudentWs {
             if (!CheckPassword.check(username,password)){
                 return "Username và password không hợp lệ";
             }
+            int ageFake = Integer.parseInt(age);
+            float markFake = Float.parseFloat(mark);
             if (name.length() == 0 || code.length() == 0 || address.length() == 0 || className.length() == 0){
                 return "Thất bại: Điền thiếu thông tin sinh viên.";
             }
-            CallWs.callStudentWs(username,password,name,age,code,className,address,mark);
-            return "Thành công";
+            else {
+                CallWs.callStudentWs(username, password, name, age, code, className, address, mark);
+                return "Thành công";
+            }
+//            int ageFake = Integer.parseInt(age);
+//            float markFake = Float.parseFloat(mark);
+//            if (CheckPassword.check(username,password)) {
+//                CallWs.callStudentWs(username, password, name, age, code, className, address, mark);
+//                return "Thành công";
+//            }
+//            return "Username và password không hợp lệ.";
         }catch (Exception e){
             return "Thất bại";
         }
