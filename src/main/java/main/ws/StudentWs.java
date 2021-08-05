@@ -2,6 +2,7 @@ package main.ws;
 
 import main.obj.Student;
 import main.thread.ThreadOne;
+import main.utils.CallWs;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -21,8 +22,9 @@ public class StudentWs {
             int ageFake = Integer.parseInt(age);
             float markFake = Float.parseFloat(mark);
             if (CheckPasswordUser.check(username,password)) {
-                Student student = new Student(name,ageFake,code,className,address,markFake);
-                ThreadOne.addQueue(student);
+
+                CallWs.callStudentWs(username,password,name,age,code,className,address,mark);
+
                 return "Thành công";
             }
             return "Username và password không hợp lệ.";
