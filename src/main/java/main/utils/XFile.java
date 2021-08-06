@@ -16,7 +16,7 @@ public class XFile {
 
     public static int getTheNumberOfStudent() throws FileNotFoundException {
         int lines = 0;
-        File file = new File("C:/Users/HP/IdeaProjects/OceanTech/ChuaBT/Poject1/lib/students.txt");
+        File file = new File("C:\\Users\\HP\\IdeaProjects\\OceanTech\\ChuaBT\\Project1\\lib\\students.txt");
         Scanner sc = new Scanner(file);
         while(sc.hasNextLine())
         {
@@ -30,7 +30,7 @@ public class XFile {
         ArrayList<Student> student = new ArrayList<Student>();
 
         try{
-            File r_file = new File("C:/Users/HP/IdeaProjects/OceanTech/ChuaBT/Poject1/lib/students.txt");
+            File r_file = new File("C:\\Users\\HP\\IdeaProjects\\OceanTech\\ChuaBT\\Project1\\lib\\students.txt");
             Scanner sc = new Scanner(r_file);
 
             while (sc.hasNextLine()) {
