@@ -11,7 +11,7 @@
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="Poject1" />
+          <element id="module-output" name="Project1" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
@@ -22,7 +22,7 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/Poject1-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="Poject1/web/Web" />
+      <element id="javaee-facet-resources" facet="Project1/web/Web" />
     </root>
   </artifact>
 </component>
